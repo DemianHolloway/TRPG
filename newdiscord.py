@@ -40,7 +40,6 @@ async def on_message(message):
         await author.send(msg)
 
     if message.content.startswith("!정보"):
-        date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
         embed=discord.Embed(title="제럴드 스왈로우", description="적기사단", color=0xff0000)
         embed.set_author(name="내정보", icon_url="https://i.imgur.com/zuAMJVl.png")
         embed.set_thumbnail(url="https://i.imgur.com/N7SSeGg.png")
