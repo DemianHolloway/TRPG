@@ -54,7 +54,7 @@ async def on_message(message):
         embed.add_field(name="MP", value="100", inline=True)
         embed.add_field(name="스킬1", value="쿨타임", inline=True)
         embed.add_field(name="스킬2", value="쿨타임", inline=True)
-        await ctx.send(embed=embed)
+        await message.channel.send(embed=embed)
         
 access_token = os.environ['BOT_TOKEN']
 client.run(access_token)
