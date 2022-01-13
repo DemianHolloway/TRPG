@@ -41,13 +41,20 @@ async def on_message(message):
 
     if message.content.startswith("!정보"):
         date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
-        embed = discord.Embed(color=0x00ff00)
-        embed.add_field(name="이름", value=message.author.name, inline=True)
-        embed.add_field(name="서버닉네임", value=message.author.display_name, inline=True)
-        embed.add_field(name="가입일", value=str(date.year)+"년" + str(date.month)+"월" +str(date.day)+"일", inline=True)
-        embed.add_field(name="아이디", value=message.author.id, inline=True)
-        embed.set_thumbnail(url=message.author.avatar_url)
-        await message.channel.send(embed=embed)
+        embed=discord.Embed(title="제럴드 스왈로우", description="적기사단", color=0xff0000)
+        embed.set_author(name="내정보", icon_url="https://i.imgur.com/zuAMJVl.png")
+        embed.set_thumbnail(url="https://i.imgur.com/N7SSeGg.png")
+        embed.add_field(name="힘", value="5", inline=True)
+        embed.add_field(name="민첩", value="4", inline=True)
+        embed.add_field(name="체력", value="4", inline=True)
+        embed.add_field(name="정신", value="5", inline=True)
+        embed.add_field(name="행운", value="2", inline=True)
+        embed.add_field(name="가호", value="하인데, 포겐", inline=True)
+        embed.add_field(name="HP", value="100", inline=True)
+        embed.add_field(name="MP", value="100", inline=True)
+        embed.add_field(name="스킬1", value="쿨타임", inline=True)
+        embed.add_field(name="스킬2", value="쿨타임", inline=True)
+        await ctx.send(embed=embed)
         
 access_token = os.environ['BOT_TOKEN']
 client.run(access_token)
