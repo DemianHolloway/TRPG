@@ -55,6 +55,16 @@ async def on_message(message):
         embed.add_field(name="스킬1", value="쿨타임", inline=True)
         embed.add_field(name="스킬2", value="쿨타임", inline=True)
         await message.channel.send(embed=embed)
+     
+    if message.content.startswith(":몬스터"):
+        gc = gspread.service_account(filename='credentials.json')
+        sh = gc.open_by_key('1UUxldG6brJ87g-WJiPGlMtJQQWY59uh3C2GNXwGH9JI')
+        worksheet = sh.sheet1
+        
+        res = worksheet.get_all_value()
+        
+        await message.channel.send(embed=embed)
+        
         
 access_token = os.environ['BOT_TOKEN']
 client.run(access_token)
