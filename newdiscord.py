@@ -1,6 +1,7 @@
 import discord
 import datetime
 import os
+import gspread
 
 client = discord.Client()
 
@@ -56,7 +57,7 @@ async def on_message(message):
         embed.add_field(name="스킬2", value="쿨타임", inline=True)
         await message.channel.send(embed=embed)
      
-    if message.content.startswith(":몬스터"):
+    if message.content.startswith(":!몬스터"):
         gc = gspread.service_account(filename='credentials.json')
         sh = gc.open_by_key('1UUxldG6brJ87g-WJiPGlMtJQQWY59uh3C2GNXwGH9JI')
         worksheet = sh.sheet1
