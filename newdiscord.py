@@ -62,7 +62,7 @@ async def on_message(message):
         sh = gc.open_by_key('1UUxldG6brJ87g-WJiPGlMtJQQWY59uh3C2GNXwGH9JI')
         worksheet = sh.sheet1
         
-        res = worksheet.get_all_value()
+        res = worksheet.get_all_records()
         
         await message.channel.send(embed=embed)
         
