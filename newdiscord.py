@@ -1,7 +1,6 @@
 import discord
 import datetime
 import os
-import gspread
 
 client = discord.Client()
 
